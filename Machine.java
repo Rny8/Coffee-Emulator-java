@@ -2,14 +2,12 @@ public class Machine {
     private int HeatTime;
     private String name;
     private int BrewTime;
-    private int cost;
     private int ID;
 
-    public Machine(String name, int HeatTime, int BrewTime, int cost, int ID){
+    public Machine(String name, int HeatTime, int BrewTime, int ID){
         this.name = name;
         this.HeatTime = HeatTime;
         this.BrewTime = BrewTime;
-        this.cost = cost;
         this.ID = ID;
     }
 
@@ -25,12 +23,8 @@ public class Machine {
         return this.BrewTime;
     }
 
-    public int getMachineID(){
-        return this.ID;
-    }
-    
-    public int GetCost(){
-        return this.cost;
+    public static void startHeatUp(){
+        System.out.println("Heating Up");
     }
 
     @Override

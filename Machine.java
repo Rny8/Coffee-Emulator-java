@@ -1,4 +1,9 @@
+import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+
 public class Machine {
+
     private int HeatTime;
     private String name;
     private int BrewTime;
@@ -22,9 +27,22 @@ public class Machine {
     public int getBrewTime(){
         return this.BrewTime;
     }
-
+    static Random rand = new Random();
+    static int tempature = 0;
     public static void startHeatUp(){
         System.out.println("Heating Up");
+        while (tempature < 150) {
+            try{
+                Thread.sleep(1500);
+                tempature += rand.nextInt(15);
+                System.out.println(tempature);
+            }catch(InterruptedException ex){
+                System.out.println(ex);
+            }
+        if (tempature >= 150) {
+            System.out.println("Reached tempature");
+        }
+        }
     }
     
     public static void StartBrew(){

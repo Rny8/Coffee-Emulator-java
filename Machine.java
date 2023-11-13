@@ -26,6 +26,10 @@ public class Machine {
     public static void startHeatUp(){
         System.out.println("Heating Up");
     }
+    
+    public static void StartBrew(){
+        System.out.println("Starting Brew");
+    }
 
     @Override
     public String toString(){

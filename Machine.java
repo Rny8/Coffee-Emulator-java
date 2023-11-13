@@ -30,18 +30,23 @@ public class Machine {
     static Random rand = new Random();
     static int tempature = 0;
     public static void startHeatUp(){
-        System.out.println("Heating Up");
-        while (tempature < 150) {
+        if (tempature >= 150) {
+            System.out.println("Machine is already at operating tempature");
+        }
+        else {
+            System.out.println("Heating Up");
+            while (tempature < 150) {
             try{
                 Thread.sleep(1500);
                 tempature += rand.nextInt(15);
-                System.out.println(tempature);
+                System.out.print("\rTemp: " + tempature);
             }catch(InterruptedException ex){
                 System.out.println(ex);
             }
-        if (tempature >= 150) {
-            System.out.println("Reached tempature");
-        }
+            if (tempature >= 150) {
+                System.out.println("\nReached temperature");
+            }
+            }
         }
     }
     

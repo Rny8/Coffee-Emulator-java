@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 
 public class Machine {
@@ -39,7 +38,7 @@ public class Machine {
             try{
                 Thread.sleep(1500);
                 tempature += rand.nextInt(15);
-                System.out.print("\rTemp: " + tempature);
+                System.out.print("\rTemp: " + tempature + "°F ");
             }catch(InterruptedException ex){
                 System.out.println(ex);
             }

@@ -14,6 +14,9 @@ public class Main {
             if (userDebugInput == 1){
                 Machine.startHeatUp();
             }
+            if (userDebugInput == 2) {
+                Machine.StartBrew();
+            }
         }
     }
 }

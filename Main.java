@@ -3,9 +3,6 @@ import java.util.Arrays;
 
 public class Main {
     static Scanner scanner;
-    static CoffeeMachines inventory = new CoffeeMachines(new Machine[]{
-        new Machine("Espresso Machine", 45, 35, 1),
-    });
 
     public static void main(String[] args) {
         scanner = new Scanner(System.in);

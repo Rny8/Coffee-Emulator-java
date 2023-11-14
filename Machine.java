@@ -48,9 +48,30 @@ public class Machine {
             }
         }
     }
-    
-    public static void StartBrew(){
-        System.out.println("Starting Brew");
+    static float ouncesBrewed = 0;
+    public static void StartBrew(int Ounces){
+        ouncesBrewed = 0;
+        if (tempature < 150) {
+            System.out.println("Machine is not at operating tempature please heat up");
+        }
+        else {
+            System.out.println("Starting Brew");
+            while (ouncesBrewed < Ounces) {
+                try{
+                    Thread.sleep(1500);
+                    ouncesBrewed += .5;
+                    System.out.print("\rOunces Brewed: " + ouncesBrewed + "oz");
+                    
+                }catch(InterruptedException ex){
+                    System.out.println(ex);
+                };
+                if (ouncesBrewed == Ounces) {
+                    System.out.println("\nBrew Amount Reached");
+                    ouncesBrewed = 0;
+                    break;
+                }
+            }
+        }
     }
 
     @Override
